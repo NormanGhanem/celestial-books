@@ -1,11 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="refresh" content="0; url=dialogue-index.html" />
-    <title>Redirecting...</title>
-  </head>
-  <body>
-    <p>If you are not redirected automatically, <a href="dialogue-index.html">click here</a>.</p>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Living Library</title>
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --fg: #f5f5f5;
+      --accent: #e7d28b;
+      --muted: #cfcfcf;
+    }
+
+    html, body { height: 100%; }
+
+    body {
+      margin: 0;
+      background: radial-gradient(1200px 700px at 50% 20%, #1b1b1b 0%, #0f0f0f 55%, #0a0a0a 100%);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--fg);
+    }
+
+    nav {
+      background-color: #111;
+      padding: 15px;
+      text-align: center;
+    }
+
+    nav a {
+      color: var(--fg);
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    .container {
+      padding: 40px;
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
+
+    h1 {
+      color: var(--accent);
+      margin-bottom: 30px;
+    }
+
+    p {
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 1.1em;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="dialogue-index.html">Dialogue</a>
+    <a href="living_library.html">Living Library</a>
+  </nav>
+
+  <div class="container">
+    <h1>The Living Library</h1>
+    <p>
+      This evolving archive of multilingual conversations is a journey into reflection, reason, and revelation. 
+      Within these dialogues, knowledge is not fixed in books, but lives and moves—shaping and being shaped by the seeker.
+    </p>
+  </div>
+</body>
 </html>
