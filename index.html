@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Celestial Books</title>
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --fg: #f5f5f5;
+      --accent: #e7d28b;
+      --muted: #cfcfcf;
+    }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      background: radial-gradient(1200px 700px at 50% 20%, #1b1b1b 0%, #0f0f0f 55%, #0a0a0a 100%);
+      color: var(--fg);
+      font-family: Georgia, "Times New Roman", serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+    .container { max-width: 980px; }
+    .prelude {
+      font-size: 1.15rem;
+      line-height: 1.75;
+      color: var(--muted);
+      opacity: 0;
+      transform: translateY(8px);
+      filter: blur(2px);
+      transition: opacity 1200ms ease, transform 1200ms ease, filter 1200ms ease;
+      margin-bottom: 1.5rem;
+    }
+    .title {
+      font-size: 2rem;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      margin-bottom: 1.25rem;
+      opacity: 0;
+      transform: translateY(8px);
+      filter: blur(2px);
+      transition: opacity 1200ms ease, transform 1200ms ease, filter 1200ms ease;
+    }
+    .line {
+      opacity: 0;
+      transform: translateY(8px);
+      filter: blur(2px);
+      transition: opacity 1200ms ease, transform 1200ms ease, filter 1200ms ease;
+      font-size: 1.25rem;
+      line-height: 1.7;
+      margin: 0.35rem 0;
+    }
+    .show { opacity: 1; transform: translateY(0); filter: blur(0); }
+    .cta {
+      margin-top: 2rem;
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 1000ms ease;
+    }
+    .cta.show { opacity: 1; }
+    .btn {
+      background: var(--accent);
+      color: #1b1b1b;
+      border: none;
+      padding: 0.85rem 1.25rem;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 999px;
+    }
+    .btn.secondary {
+      background: transparent;
+      color: var(--fg);
+      border: 1px solid #555;
+    }
+    .footnote {
+      margin-top: 1.5rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+      opacity: 0;
+      transition: opacity 1200ms ease;
+    }
+    .footnote.show { opacity: 1; }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <div id="prelude" class="prelude">
+      New books are born with every generation. They live a little while… then they disappear. <br/>
+      Except the celestial books — vivid, unbound by era, forever running ahead of knowledge and science.
+    </div>
+
+    <div id="title" class="title">Celestial books —</div>
+    <div class="line" id="l1">They are not bound by era.</div>
+    <div class="line" id="l2">They outpace philosophy, science, and culture.</div>
+    <div class="line" id="l3">They never lag, never expire, always run ahead of human knowledge.</div>
+    <div class="line" id="l4">They compete with the future — and always win.</div>
+
+    <div id="foot" class="footnote">Shouldn't every living soul seek these books?</div>
+
+    <div class="cta" id="cta">
+      <a href="death_vs_life.html"><button class="btn secondary">Back</button></a>
+      <a href="living_library.html"><button class="btn">Enter the Living Library</button></a>
+    </div>
+  </main>
+
+  <script>
+    const seq = ["prelude","title","l1","l2","l3","l4","foot"];
+    seq.forEach((id, i) => setTimeout(() => {
+      document.getElementById(id).classList.add("show");
+      if (i === seq.length - 1) setTimeout(() => document.getElementById('cta').classList.add('show'), 1000);
+    }, 1500 + i * 1800));
+  </script>
+</body>
+</html>
